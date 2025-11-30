@@ -84,12 +84,13 @@ app.get('/', (req, res) => {
     res.json({
         message: 'Disater Recovery Order Processing System - Checkpoint 2',
         region: process.env.AWS_REGION || 'local',
-        version: '2.0.0',
+        version: '3.0.0',
         database: 'PostgreSQL (RDS)',
         features: [
             'Persistent storage',
             'Multi-AZ database',
-            'Data consistency across instances'
+            'Data consistency across instances',
+            'Databse replication'
         ],
         endpoints: {
             health: 'GET /health',
