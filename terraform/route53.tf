@@ -1,6 +1,5 @@
-/*
 data "aws_route53_zone" "main" {
-  zone_id = "Z0061821A9CFN5ZV29TP"
+  zone_id = "Z05797891QSG0DWTK9LDY"
 }
 
 resource "aws_route53_health_check" "primary" {
@@ -20,7 +19,7 @@ resource "aws_route53_health_check" "secondary" {
 
 resource "aws_route53_record" "app_primary" {
   zone_id = data.aws_route53_zone.main.zone_id
-  name = "api.ha-project-demo.com"
+  name = "api.cs446test.com"
   type    = "A"
 
   alias {
@@ -58,4 +57,3 @@ resource "aws_route53_record" "app_secondary" {
 
   health_check_id = aws_route53_health_check.secondary.id
 }
-*/

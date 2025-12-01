@@ -125,6 +125,7 @@ resource "aws_launch_template" "app" {
                 -e DB_NAME=orders_db \
                 -e DB_USER=postgres \
                 -e DB_PASSWORD="$DB_PASSWORD" \
+                -e DB_SSL=true \
                 --restart unless-stopped \
                 --name ha-dr-app \
                 ${var.docker_image}
@@ -191,6 +192,7 @@ resource "aws_launch_template" "app_secondary" {
       -e DB_NAME=orders_db \
       -e DB_USER=postgres \
       -e DB_PASSWORD="$DB_PASSWORD" \
+      -e DB_SSL=true \
       --restart unless-stopped \
       --name ha-dr-app \
       ${var.docker_image}
